@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#21152d">
+  <meta name="description" content="FLEEP — discover stories, magazines, comics and ideas. Read. Create. Connect.">
+  <title>FLEEP — Read. Create. Connect.</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="FLEEP home">FLEEP<span>.</span></a>
+    <nav aria-label="Main navigation">
+      <button class="nav-link active" data-view="discover">Discover</button>
+      <button class="nav-link" data-view="reader">Reader</button>
+      <button class="nav-link" data-view="publish">Publish</button>
+      <button class="nav-link" data-view="about">About</button>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">☰</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">A WORLD OF STORIES</p>
+        <h1>Turn the page.<br><em>Find your world.</em></h1>
+        <p>Discover stories, comics, magazines and fresh ideas from creators everywhere.</p>
+        <div class="hero-actions">
+          <button class="btn primary" data-go="discover">Explore the library</button>
+          <button class="btn light" data-go="publish">Publish with FLEEP</button>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="book book-back"></div><div class="book book-front">
+          <span>FLEEP ORIGINALS</span><b>THE<br>OTHER<br>SIDE</b><small>A story begins here.</small>
+        </div>
+        <div class="spark">✦</div>
+      </div>
+    </section>
+
+    <section class="view active-view" id="discover">
+      <div class="section-heading">
+        <div><p class="eyebrow">FIND YOUR NEXT READ</p><h2>Explore the library</h2></div>
+        <span class="muted" id="resultCount">6 sample titles</span>
+      </div>
+      <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Search titles, categories or creators…" aria-label="Search publications"></label>
+      <div class="chips" id="categoryChips">
+        <button class="chip selected" data-category="All">All</button>
+        <button class="chip" data-category="Short Stories">Short Stories</button>
+        <button class="chip" data-category="Magazines">Magazines</button>
+        <button class="chip" data-category="Comics">Comics</button>
+        <button class="chip" data-category="Children">Children</button>
+      </div>
+      <div class="book-grid" id="bookGrid"></div>
+    </section>
+
+    <section class="view" id="reader">
+      <div class="section-heading">
+        <div><p class="eyebrow">YOUR READING SPACE</p><h2 id="readerTitle">The Other Side</h2><p class="muted" id="readerMeta">FLEEP Originals · Sample publication</p></div>
+        <button class="btn outline" id="saveBtn">♡ Save</button>
+      </div>
+      <div class="reader-toolbar">
+        <button class="btn outline small" id="prevPage">← Previous</button>
+        <span class="muted" id="pageLabel">Page 1 of 4</span>
+        <button class="btn outline small" id="nextPage">Next →</button>
+      </div>
+      <div class="sample-page" id="samplePage">
+        <span class="page-kicker">FLEEP ORIGINALS</span>
+        <div><h2 id="sampleHeading">THE OTHER SIDE</h2><p id="sampleText">Every story has a beginning. Sometimes the road we fear is the one that leads us somewhere extraordinary.</p></div>
+        <span class="page-footer">F L E E P · READ SOMETHING DIFFERENT</span>
+      </div>
+      <div class="progress-track"><div id="progressBar"></div></div>
+      <p class="muted tiny" id="progressText">25% read · Sample only</p>
+      <div class="upload-reader">
+        <h3>Try your own PDF</h3>
+        <p class="muted">Choose a PDF stored on your device. It is displayed locally in your browser and is not uploaded to FLEEP.</p>
+        <label class="file-label">Choose a PDF<input type="file" id="pdfInput" accept="application/pdf,.pdf"></label>
+        <p class="tiny muted" id="fileName">No PDF selected.</p>
+        <iframe id="pdfFrame" title="Your selected PDF" hidden></iframe>
+      </div>
+    </section>
+
+    <section class="view" id="publish">
+      <p class="eyebrow">FOR WRITERS, ARTISTS & PUBLISHERS</p>
+      <h2>Bring your work to FLEEP.</h2>
+      <p class="lead">Our first creator workflow is designed around PDF publications. Prepare your file and publication details, then submit them when creator accounts are available.</p>
+      <div class="publish-card">
+        <div class="upload-icon">↑</div>
+        <h3>Creator publishing is coming</h3>
+        <p class="muted">This starter site can preview a PDF locally, but it does not yet store or publish files online.</p>
+        <ul><li>PDF books, magazines and comics</li><li>Title, description and category</li><li>Age-appropriate audience labels</li><li>Free or paid access (payments later)</li></ul>
+        <button class="btn primary" id="goReader">Test the PDF reader</button>
+      </div>
+    </section>
+
+    <section class="view" id="about">
+      <p class="eyebrow">OUR IDEA</p><h2>Read. Create. Connect.</h2>
+      <p class="lead">FLEEP is being built as a digital reading and publishing platform for a worldwide community of readers and creators.</p>
+      <div class="feature-grid">
+        <article><b>01 · Discover</b><p>Find stories and publications across genres.</p></article>
+        <article><b>02 · Read</b><p>Enjoy a reader experience designed for phones first.</p></article>
+        <article><b>03 · Create</b><p>Give independent creators a place to share their work.</p></article>
+      </div>
+      <p class="notice">FLEEP is currently in its early build stage. Sample titles are fictional. Accounts, permanent bookmarks, creator uploads, subscriptions and payments are not connected yet.</p>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#">FLEEP<span>.</span></a><p>Read. Create. Connect.</p><small>© <span id="year"></span> FLEEP. All rights reserved.</small></footer>
+  <script src="app.js"></script>
+</body>
+</html>
